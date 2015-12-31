@@ -17,7 +17,7 @@ cacti_cron_file                     : '/etc/cron.d/cacti'
 cacti_db_name                       : 'cacti_ansible'
 cacti_db_user                       : 'cacti_ansible'
 cacti_db_hostname                   : localhost
-cacti_db_password                   : 037F31C918B75C48ACADF43DB2
+cacti_db_password                   : *******************************************
 cacti_db_populate                   : '{{ cacti_root_dir }}/cacti.sql'
 cacti_default_host_templates        : 'ucd/net SNMP Host'
 cacti_default_snmpversion           : 2

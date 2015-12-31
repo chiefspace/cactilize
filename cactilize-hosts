@@ -1,0 +1,14 @@
+# Cacti Server
+[server]
+#spyhc1
+localhost
+
+## All client to be graph
+[client]
+
+## Look up examples/host_vars and examples/group_vars for more info
+[webs]
+
+[caches]
+
+[databases]

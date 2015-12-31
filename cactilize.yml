@@ -1,0 +1,57 @@
+# File: cactilize.yml
+# Description:
+# Playbook for cactilize
+#
+# OS: Debian6 debian7
+
+---
+- hosts: all
+  user: root
+  sudo: True
+  gather_facts:  yes
+  vars:
+    # ABSTRACT
+    deploy                : false
+#    webui_admin_user      : helldorado
+    webui_admin_user      : cactiadmin
+#    webui_admin_password  : 2A2169234F6BC136j0CFC29EEF8
+    webui_admin_password  : *******************************************
+#    htpassword_admin      : DQWWEaTVmoi2I
+    htpassword_admin      : *******************************************
+#    archi_name            : SPYNOL
+    archi_name            : PUBLIC
+    archi_subnet          : '192.168.1'
+#    default_community     : spynol
+    default_community     : public
+    cacti_db_hostname     : localhost
+#    cacti_db_password     : tNSimlfnER7d6
+    cacti_db_password     : *******************************************
+    cacti_mysql_mon_user  : monitoring
+#    cacti_mysql_mon_pass  : 4vtYd5axfavQo
+    cacti_mysql_mon_pass  : *******************************************
+    RRA_VG_NAME           : system
+    #RRA_LV_NAME           : var_lib_rra
+    RRA_LV_SIZE           : 5G
+    RRA_MOUNT_POINT       : '/var/lib/rra'
+    DEFAULT_IP            : '127.0.0.1'
+    WHITELIST             : ''
+    cacti_server          : server
+
+     ## User Access and Permissions
+    Users:
+      'beicactiviewer':
+#         htpassword          : YbXpnONCIG9V2
+         htpassword          : *******************************************
+#         password            : FleninOfAt
+         password            : *******************************************
+         full_name           : 'BEI Cacti Viewer'
+         enabled             : 'on'
+         must_change_password:
+         permissions         :
+           - View_Graphs
+           - Export_Data
+         policy              :
+           - View_Graphs
+           - View_Tree
+  roles:
+   - helldorado.cactilize

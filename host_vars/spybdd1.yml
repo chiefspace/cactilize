@@ -1,0 +1,14 @@
+---
+Hosts:
+  'spybdd1':
+    #IP   : 172.20.20.10
+    graph:
+      - system
+      - mysql
+    tree : DATABASES
+
+  'spybdd1_memcache':
+    IP   : 172.20.20.70
+    graph:
+      - memcache
+    tree : NoSQL

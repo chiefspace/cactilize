@@ -9,7 +9,7 @@ Alias /cacti {{ cacti_root_dir }}
 <Directory {{ cacti_root_dir }}>
         AddType application/x-httpd-php .php
         AllowOverride None
-        Options -Indexes FollowSymLinks MultiViews
+        Options -Indexes +FollowSymLinks +MultiViews
         Order deny,allow
         Deny from all
         AuthName "Provide credentials"
